@@ -1,0 +1,21 @@
+<div class="row-fluid">
+  <div class="col-sm-3"></div>
+  <div class="col-sm-6">
+  	<h3><strong>Repositry: </strong> <%= @repo %></h3>
+
+  	<h5><strong>Commits: </strong> <%= @commits.body.size %></h5>
+
+  	<h5><strong>Releases: </strong> <%= @releases.body.size %></h5>
+  	<% if @response.success? %>
+  	  <strong>Branch: </strong></br>
+  	  <ul class="list-group">
+	  	<% @response.body.each do |branch| %>
+	  		<li class="list-group-item"> <%= branch.name%></li>
+	  		<% end  %>
+	  	</ul>
+	  <% else %>
+	    No permission to access!!!
+	  <% end %>
+  </div>
+  <div class="col-sm-3"></div>
+</div>
