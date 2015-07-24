@@ -4,8 +4,13 @@ gem 'rails', '3.2.21'
 
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
+group :development do
+  gem 'sqlite3'
+end
 
-gem 'sqlite3'
+group :production do
+  gem 'pg'
+end
 
 
 # Gems used only for assets and not required
@@ -35,7 +40,7 @@ gem 'jquery-rails'
 # gem 'capistrano'
 
 # To use debugger
-gem 'debugger'
+#gem 'debugger'
 gem 'nokogiri', '~> 1.6.0' 
 gem 'github_api'
 gem 'simple_form'
