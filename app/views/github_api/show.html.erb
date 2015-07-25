@@ -1,22 +1,22 @@
 <div class="row-fluid">
   <div class="col-sm-3"></div>
-	<div class="col-sm-6">
-		<% unless @error %>
-			<table class="table hover">
-				<tr>
-					<th> name</th>
-					<th> created_at</th>
-					<th> commits</th>
-				</tr>
-			  <% @github.repos.list.each do |repo| %>
-			  <tr>
-				  <td><%= link_to repo.name, repo_path(:repo => repo.name, user: @user) %></td>
-				  <td><%= repo.created_at %></td>
-				  <td><%= "test" %></td>
-			  </tr>
-			  <% end %>
-		  </table>
-		<% end %>
-	</div>
+  <div class="col-sm-6">
+    <% unless @error %>
+      <table class="table hover">
+        <tr>
+          <th> name</th>
+          <th> created_at</th>
+          <th> commits</th>
+        </tr>
+        <% @github.repos.list.each do |repo| %>
+        <tr>
+          <td><%= link_to repo.name, repo_path(:repo => repo.name, user: @user) %></td>
+          <td><%= repo.created_at %></td>
+          <td><%= "test" %></td>
+        </tr>
+        <% end %>
+      </table>
+    <% end %>
+  </div>
   <div class="col-sm-3"></div>
 </div>
